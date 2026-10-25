@@ -23,11 +23,11 @@ export default function LoginPage() {
 
       <form onSubmit={handleSubmit} className="space-y-4" data-testid="login-form">
         <div>
-          <label htmlFor="login-nim-input" className="block text-sm font-semibold text-slate-700 mb-1.5">
+          <label htmlFor="username" className="block text-sm font-semibold text-slate-700 mb-1.5">
             NIM / Username
           </label>
           <input
-            id="login-nim-input"
+            id="username"
             type="text"
             required
             value={nim}
@@ -36,11 +36,11 @@ export default function LoginPage() {
           />
         </div>
         <div>
-          <label htmlFor="login-password-input" className="block text-sm font-semibold text-slate-700 mb-1.5">
+          <label htmlFor="password" className="block text-sm font-semibold text-slate-700 mb-1.5">
             Kata Sandi
           </label>
           <input
-            id="login-password-input"
+            id="password"
             type="password"
             required
             value={password}
@@ -49,7 +49,7 @@ export default function LoginPage() {
           />
         </div>
         <button
-          id="login-submit-button"
+          id="btn-submit"
           type="submit"
           disabled={isLoading}
           className="btn-primary w-full py-3"
