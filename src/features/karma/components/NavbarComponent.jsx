@@ -37,11 +37,11 @@ export default function NavbarComponent({ onMenuClick }) {
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          aria-label={`Menu akun ${displayName}`}
           aria-haspopup="menu"
           aria-expanded={isOpen}
           className="flex items-center gap-2 rounded-xl px-2 py-1.5 hover:bg-slate-100 transition"
         >
+          <span className="sr-only">Menu akun</span>
           {user?.foto ? (
             <img
               src={user.foto}
@@ -49,7 +49,10 @@ export default function NavbarComponent({ onMenuClick }) {
               className="w-9 h-9 rounded-full object-cover ring-2 ring-white shadow"
             />
           ) : (
-            <span className="w-9 h-9 rounded-full bg-tinta text-kuning flex items-center justify-center text-sm font-bold ring-2 ring-white shadow">
+            <span
+              aria-hidden="true"
+              className="w-9 h-9 rounded-full bg-tinta text-kuning flex items-center justify-center text-sm font-bold ring-2 ring-white shadow"
+            >
               {getInitial(user?.nama)}
             </span>
           )}
