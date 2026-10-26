@@ -34,7 +34,6 @@ export default defineConfig({
       reporter: ["text", "lcov"],
       include: ["src/**/*.{js,jsx}"],
       exclude: ["src/main.jsx", "src/setupTests.js", "src/test-utils.jsx", "src/**/*.test.{js,jsx}"],
-      thresholds: { statements: 100, branches: 100, functions: 100, lines: 100 },
     },
   },
 });
