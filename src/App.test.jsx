@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { renderWithProviders, screen } from "./test-utils";
+import { renderWithProviders, screen } from "./tests/test-utils";
 import App from "./App";
 
 const pembina = { id: 1, nama: "Bapak Asrama", nim: "pembina", role: "pembina" };

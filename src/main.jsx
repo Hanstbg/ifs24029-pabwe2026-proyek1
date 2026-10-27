@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "./store";
 import App from "./App";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { getAccessToken } from "./helpers/apiHelper";
 import { asyncFetchMe } from "./features/auth/states/action";
 import "@fontsource-variable/plus-jakarta-sans";
@@ -17,7 +18,9 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </BrowserRouter>
     </Provider>
   </StrictMode>

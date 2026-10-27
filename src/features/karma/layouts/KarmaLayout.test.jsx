@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { Routes, Route } from "react-router-dom";
-import { renderWithProviders, screen } from "../../../test-utils";
+import { renderWithProviders, screen } from "../../../tests/test-utils";
 import KarmaLayout from "./KarmaLayout";
 
 const pembina = { id: 1, nama: "Bapak Asrama", nim: "pembina", role: "pembina" };

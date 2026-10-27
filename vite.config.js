@@ -1,20 +1,6 @@
-import fs from "node:fs";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-
-// Normalisasi path di coverage/lcov.info ke "src/..." agar terbaca SonarQube.
-process.on("exit", () => {
-  try {
-    const p = "./coverage/lcov.info";
-    if (fs.existsSync(p)) {
-      const raw = fs.readFileSync(p, "utf8");
-      fs.writeFileSync(p, raw.replace(/\\/g, "/").replace(/SF:.*\/src\//g, "SF:src/"), "utf8");
-    }
-  } catch {
-    // abaikan jika lcov.info belum ada
-  }
-});
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
@@ -25,15 +11,15 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    include: ["src/**/*.test.{js,jsx}"],
     environment: "jsdom",
-    setupFiles: "./src/setupTests.js",
+    setupFiles: "./src/tests/setupTests.js",
     css: false,
     coverage: {
       provider: "v8",
-      reporter: ["text", "lcov"],
+      reporter: ["text", "html"],
       include: ["src/**/*.{js,jsx}"],
-      exclude: ["src/main.jsx", "src/setupTests.js", "src/test-utils.jsx", "src/**/*.test.{js,jsx}"],
+      exclude: ["src/main.jsx", "src/tests/**", "src/**/*.test.{js,jsx}"],
+      thresholds: { statements: 80, branches: 75, functions: 75, lines: 80 },
     },
   },
 });

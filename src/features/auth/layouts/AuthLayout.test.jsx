@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { Routes, Route } from "react-router-dom";
-import { renderWithProviders, screen } from "../../../test-utils";
+import { renderWithProviders, screen } from "../../../tests/test-utils";
 import AuthLayout from "./AuthLayout";
 
 function renderLayout() {

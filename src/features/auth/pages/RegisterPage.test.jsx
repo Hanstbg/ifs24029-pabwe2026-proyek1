@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { renderWithProviders, screen } from "../../../test-utils";
+import { renderWithProviders, screen } from "../../../tests/test-utils";
 import * as authAction from "../states/action";
 import RegisterPage from "./RegisterPage";
 

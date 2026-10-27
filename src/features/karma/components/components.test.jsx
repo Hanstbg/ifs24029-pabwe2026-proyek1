@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { Routes, Route } from "react-router-dom";
-import { renderWithProviders, screen } from "../../../test-utils";
+import { renderWithProviders, screen } from "../../../tests/test-utils";
 import BadgeComponent from "./BadgeComponent";
 import StatCardComponent from "./StatCardComponent";
 import RequireRole from "./RequireRole";

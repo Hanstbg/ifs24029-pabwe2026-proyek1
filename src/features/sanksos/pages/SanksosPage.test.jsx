@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { renderWithProviders, screen, waitFor } from "../../../test-utils";
+import { renderWithProviders, screen, waitFor } from "../../../tests/test-utils";
 import { showErrorDialog } from "../../../helpers/toolsHelper";
 import SanksosPage from "./SanksosPage";
 

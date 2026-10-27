@@ -33,14 +33,20 @@ npm run test:coverage
 
 ## Struktur (`src`)
 ```
+components/    komponen UI bersama (FormField, AsramaSelect, PhotoField, ErrorBoundary)
+constants/     asrama, roles, sanksos, upload
 features/
-  auth/        api/ states/ pages/ layouts/     login, token, data pengguna
-  mahasiswa/   api/ states/ pages/              rekap + tambah mahasiswa
-  pelanggaran/ api/ states/ pages/              catat dan riwayat pelanggaran
-  demerit/     api/ states/                     demerit + ringkasan kartu
-  sanksos/     api/ states/ pages/              request dan proses Sanksos
-  karma/       layouts/ components/ pages/      layout utama, sidebar, navbar, dashboard
-helpers/       apiHelper, toolsHelper, dataHelper
-hooks/         useInput
+  auth/        api/ states/ pages/ layouts/
+  mahasiswa/   api/ states/ components/ pages/
+  pelanggaran/ api/ states/ pages/
+  demerit/     api/ states/
+  sanksos/     api/ states/ components/ pages/
+  asrama/      api/ states/ pages/
+  profil/      pages/
+  karma/       layouts/ components/ pages/
+helpers/       apiHelper, toolsHelper, dataHelper, fileHelper, validationHelper
+hooks/         useInput, usePhotoUpload
+tests/         setupTests, test-utils
 store.js       Redux store
 ```
+Backend ada di repo terpisah (`karma-backend`).
